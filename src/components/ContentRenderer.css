@@ -1,0 +1,159 @@
+.content-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+
+.content-text h2 {
+  font-size: 1.4rem;
+  color: #1e3a5f;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+}
+
+.content-text h3 {
+  font-size: 1.15rem;
+  color: #1f2937;
+  margin: 1.5rem 0 0.8rem;
+  font-weight: 600;
+}
+
+.content-text p {
+  margin-bottom: 1.2rem;
+}
+
+.acs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.acs-badge:hover {
+  background: #bfdbfe;
+}
+
+/* Glossary Popup Tooltip */
+.glossary-tooltip {
+  position: absolute;
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+  min-width: 250px;
+  pointer-events: none;
+}
+
+.glossary-tooltip-term {
+  font-weight: 700;
+  color: #1e3a5f;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+}
+
+.glossary-tooltip-definition {
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Highlight Menu */
+.highlight-menu {
+  position: absolute;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.highlight-menu-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.highlight-colors {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.highlight-color-btn {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.highlight-color-btn:hover {
+  transform: scale(1.1);
+  border-color: #2563eb;
+}
+
+.highlight-remove {
+  width: 100%;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.highlight-remove:hover {
+  background: #fee2e2;
+}
+
+/* Highlight color classes */
+.highlight-yellow {
+  background: #fef3c7;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.highlight-green {
+  background: #d1fae5;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.highlight-blue {
+  background: #dbeafe;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.highlight-pink {
+  background: #fce7f3;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.highlight-orange {
+  background: #ffedd5;
+  padding: 0 2px;
+  border-radius: 2px;
+}

@@ -1,0 +1,179 @@
+.notes-sidebar {
+  width: 300px;
+  background: #fafafa;
+  border-left: 1px solid #e5e7eb;
+  padding: 1.2rem;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  align-self: flex-start;
+}
+
+.notes-sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.notes-header {
+  margin-bottom: 1rem;
+}
+
+.notes-header h3 {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.note-input {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.tag-input-wrapper {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.add-tag-btn {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.add-tag-btn:hover {
+  background: #e5e7eb;
+}
+
+.note-tags-display {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.tag-badge {
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-badge:hover {
+  background: #bfdbfe;
+}
+
+.tag-badge.fuel-system {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.tag-badge.instruments {
+  background: #ddd6fe;
+  color: #7c3aed;
+}
+
+.tag-badge.weather {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.tag-badge.checkride {
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.tag-badge.systems {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+
+.tag-badge.performance {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.remove-tag {
+  cursor: pointer;
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.remove-tag:hover {
+  opacity: 1;
+}
+
+.save-note-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  transition: background 0.2s;
+}
+
+.save-note-btn:hover {
+  background: #1d4ed8;
+}
+
+.recent-notes {
+  margin-top: 2rem;
+}
+
+.recent-notes h4 {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.recent-note-item {
+  background: #f9fafb;
+  padding: 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  border-left: 3px solid #2563eb;
+}
+
+.recent-note-page {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.recent-note-text {
+  color: #374151;
+}
