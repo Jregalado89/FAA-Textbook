@@ -1,0 +1,255 @@
+.trainers-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Hero */
+.trainers-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.trainers-intro h2 {
+  font-size: 2rem;
+  color: #1e3a5f;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.trainers-intro p {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Tabs */
+.trainers-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.trainer-tab {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.trainer-tab:hover { color: #2563eb; }
+
+.trainer-tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+/* Category section */
+.trainer-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* 3-column grid */
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .trainers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .trainers-grid { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.trainer-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+}
+
+/* Gradient preview area */
+.trainer-preview {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.trainer-preview-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.trainer-type-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.92);
+  color: #1e3a5f;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Card body */
+.trainer-content {
+  padding: 1.3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainer-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.trainer-description {
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+/* Feature tag pills */
+.trainer-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.trainer-feature-pill {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+  color: #374151;
+  white-space: nowrap;
+}
+
+/* Meta row */
+.trainer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.trainer-time {
+  font-size: 0.83rem;
+  color: #6b7280;
+  flex: 1;
+}
+
+.trainer-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.trainer-badge-popular {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.trainer-badge-new {
+  background: #fefce8;
+  color: #a16207;
+}
+
+.trainer-launch-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.trainer-launch-btn:hover { background: #1d4ed8; }
+
+/* Coming soon */
+.coming-soon-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+}
+
+.coming-soon-section h3 {
+  font-size: 1.3rem;
+  color: #1e3a5f;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.coming-soon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.coming-soon-card {
+  text-align: center;
+  padding: 1.2rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.coming-soon-icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
+
+.coming-soon-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+}

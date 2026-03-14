@@ -1,0 +1,91 @@
+.chapter-sidebar {
+  width: 260px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  align-self: flex-start;
+  overflow: hidden;
+}
+
+.chapter-sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.sidebar-header {
+  padding: 0.8rem 1.2rem;
+  background: #2563eb;
+  border-bottom: 2px solid #1d4ed8;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.sidebar-header h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.5px;
+  margin: 0;
+  flex: 1;
+  font-weight: 700;
+}
+
+.sidebar-close-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 3px 7px;
+  color: white;
+  line-height: 1;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255,255,255,0.28);
+}
+
+.chapter-list {
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+.chapter-item {
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.chapter-item:hover {
+  background: #f9fafb;
+  border-left-color: #93c5fd;
+}
+
+.chapter-item.active {
+  background: #eff6ff;
+  border-left-color: #2563eb;
+}
+
+.chapter-number {
+  font-size: 0.75rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.chapter-name {
+  font-size: 0.9rem;
+  color: #1f2937;
+}

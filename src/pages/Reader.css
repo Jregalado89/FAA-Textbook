@@ -1,0 +1,333 @@
+.reader-page {
+  min-height: 100vh;
+  background: #fdfbf7;
+  display: flex;
+  flex-direction: column;
+}
+
+.reader-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.reader-container {
+  display: flex;
+  flex: 1;
+  overflow: visible;
+  position: relative;
+  align-items: flex-start;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: max-width 0.3s ease;
+}
+
+.content-area.expanded {
+  max-width: 1100px;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.chapter-title {
+  font-size: 1.8rem;
+  color: #1e3a5f;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-number {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Sidebar Rails - visible when sidebars are collapsed */
+.sidebar-rail {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+.sidebar-rail.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebar-rail.left {
+  left: 6px;
+}
+
+.sidebar-rail.right {
+  right: 6px;
+}
+
+.rail-arrow {
+  width: 26px;
+  height: 38px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 0;
+}
+
+.rail-arrow:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.rail-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.rail-hamburger {
+  width: 30px;
+  height: 38px;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.35);
+}
+
+.rail-hamburger:hover {
+  background: #1d4ed8;
+  box-shadow: 0 3px 8px rgba(37,99,235,0.5);
+}
+
+/* Top page navigation arrows inside content */
+.content-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0 1rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-nav-arrow {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.content-nav-arrow:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.content-nav-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.content-nav-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+  background: #1a1a1a;
+  color: #e5e5e5;
+}
+
+.reader-page.night-mode {
+  background: #1a1a1a;
+}
+
+.night-mode .content-area {
+  background: #1a1a1a;
+  color: #e5e5e5;
+}
+
+.night-mode .chapter-title {
+  color: #93c5fd;
+}
+
+.night-mode .page-number {
+  color: #9ca3af;
+}
+
+.night-mode .content-text {
+  color: #d1d5db;
+}
+
+.night-mode .content-text h2 {
+  color: #93c5fd;
+}
+
+.night-mode .content-text h3 {
+  color: #bfdbfe;
+}
+
+.night-mode .sidebar-toggle {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.night-mode .sidebar-toggle:hover {
+  background: #3d3d3d;
+  border-color: #4b5563;
+}
+
+.night-mode .chapter-sidebar,
+.night-mode .notes-sidebar {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.night-mode .chapter-item {
+  color: #d1d5db;
+}
+
+.night-mode .chapter-item:hover {
+  background: #3d3d3d;
+}
+
+.night-mode .chapter-item.active {
+  background: #374151;
+}
+
+.night-mode .note-input,
+.night-mode .tag-input {
+  background: #374151;
+  border-color: #4b5563;
+  color: #e5e5e5;
+}
+
+.night-mode .page-navigation {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+.night-mode .glossary-tooltip {
+  background: #2d2d2d;
+  border-color: #60a5fa;
+  color: #e5e5e5;
+}
+
+.night-mode .glossary-tooltip-term {
+  color: #93c5fd;
+  border-color: #4b5563;
+}
+
+.night-mode .highlight-menu {
+  background: #2d2d2d;
+  border-color: #4b5563;
+}
+
+.night-mode .highlight-menu-title {
+  color: #9ca3af;
+}
+
+.night-mode .glossary-term {
+  border-bottom-color: #60a5fa;
+}
+
+.night-mode .glossary-term:hover {
+  background: rgba(96, 165, 250, 0.1);
+}
+
+/* Night mode for new elements */
+.night-mode .content-top-nav {
+  border-bottom-color: #374151;
+}
+
+.night-mode .content-nav-arrow {
+  background: #374151;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.night-mode .content-nav-arrow:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+}
+
+.night-mode .content-nav-label {
+  color: #9ca3af;
+}
+
+.night-mode .sidebar-open-btn {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.night-mode .sidebar-close-btn,
+.night-mode .notes-close-btn {
+  border-color: #4b5563;
+  color: #9ca3af;
+}
+
+.night-mode .sidebar-close-btn:hover,
+.night-mode .notes-close-btn:hover {
+  background: #374151;
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+.night-mode .chapter-list {
+  background: #2d2d2d;
+}
+
+.night-mode .chapter-number {
+  color: #60a5fa;
+}
+
+.night-mode .rail-arrow {
+  background: #2d2d2d;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.night-mode .rail-arrow:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+}
