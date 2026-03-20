@@ -176,7 +176,7 @@ function Reader() {
 
           <div className="page-header">
             <h1 className="chapter-title">
-              {currentPage.sections[0]?.title || currentChapter.title}
+              {currentPage.page_title || currentPage.sections[0]?.title || currentChapter.title}
             </h1>
             <div className="page-number">
               Chapter {currentChapter.chapter_number} • Page {currentPage.page_number.split('-')[1] || currentPage.page_number}

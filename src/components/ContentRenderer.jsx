@@ -5,6 +5,27 @@ import { getImageByFigure } from '../data/imageData';
 import ACSModal from './ACSModal';
 import './ContentRenderer.css';
 
+function FigurePlaceholder({ src, alt, figureNumber }) {
+  const [failed, setFailed] = useState(false);
+
+  if (!src || failed) {
+    return (
+      <div className="figure-placeholder">
+        <div className="figure-placeholder-icon">🖼</div>
+        <div className="figure-placeholder-label">Figure {figureNumber}</div>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 function GlossaryTooltip({ term, definition, position }) {
   if (!definition) return null;
   
@@ -323,15 +344,16 @@ function ContentRenderer({ sections, glossaryData, currentPage }) {
             }
 
             if (item.type === 'figure') {
+              const imgSrc = item.image
+                ? `/images/ch${currentPage.split('-')[0]}/${item.image}`
+                : null;
               return (
                 <figure key={itemIdx} className="content-figure-inline">
-                  {item.image ? (
-                    <img
-                      src={`/images/ch1/${item.image}`}
-                      alt={item.caption}
-                      onError={(e) => { e.target.src = '/images/placeholder.png'; }}
-                    />
-                  ) : null}
+                  <FigurePlaceholder
+                    src={imgSrc}
+                    alt={item.caption}
+                    figureNumber={item.figure_number}
+                  />
                   <figcaption>
                     <strong>Figure {item.figure_number}.</strong> {item.caption}
                   </figcaption>
@@ -342,9 +364,30 @@ function ContentRenderer({ sections, glossaryData, currentPage }) {
             if (item.type === 'list') {
               return (
                 <ul key={itemIdx} className="content-list">
-                  {item.items.map((li, liIdx) => (
-                    <li key={liIdx}>{li}</li>
-                  ))}
+                  {item.items.map((li, liIdx) => {
+                    // Nested item: object with text + sub-items
+                    if (typeof li === 'object' && li !== null && li.text !== undefined) {
+                      const isNumbered = li.items && li.items.length > 0 &&
+                        li.items.every(sub => /^\d+\./.test(sub.trim()));
+                      const SubList = isNumbered ? 'ol' : 'ul';
+                      return (
+                        <li key={liIdx}>
+                          {li.text}
+                          {li.items && li.items.length > 0 && (
+                            <SubList className={isNumbered ? 'content-list-numbered' : 'content-list'}>
+                              {li.items.map((sub, subIdx) => (
+                                <li key={subIdx}>
+                                  {isNumbered ? sub.replace(/^\d+\.\s*/, '') : sub}
+                                </li>
+                              ))}
+                            </SubList>
+                          )}
+                        </li>
+                      );
+                    }
+                    // Flat string item
+                    return <li key={liIdx}>{li}</li>;
+                  })}
                 </ul>
               );
             }
