@@ -1,0 +1,395 @@
+.settings-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+}
+
+.settings-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0 0 0.3rem 0;
+}
+
+.settings-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Section ──────────────────────────────────────────────── */
+.settings-section {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.settings-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #6b7280;
+  padding: 0.85rem 1.25rem 0.6rem;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+}
+
+/* ── Row ──────────────────────────────────────────────────── */
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 1rem;
+}
+
+.settings-row:last-of-type {
+  border-bottom: none;
+}
+
+.settings-row-info {
+  flex: 1;
+}
+
+.settings-row-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin-bottom: 0.15rem;
+}
+
+.settings-row-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* ── Toggle ───────────────────────────────────────────────── */
+.settings-toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.settings-toggle.on {
+  background: #2563eb;
+}
+
+.settings-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: left 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.settings-toggle.on .settings-toggle-thumb {
+  left: 25px;
+}
+
+/* ── Font controls ────────────────────────────────────────── */
+.settings-font-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.settings-font-btn {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.15s;
+  min-width: 38px;
+}
+
+.settings-font-btn:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.settings-font-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.settings-font-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 36px;
+  text-align: center;
+}
+
+/* ── Preview ──────────────────────────────────────────────── */
+.settings-preview {
+  margin: 0 1.25rem 1.25rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.settings-preview-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.settings-preview-text {
+  color: #374151;
+  line-height: 1.6;
+  transition: font-size 0.2s;
+}
+
+/* ── Night mode ───────────────────────────────────────────── */
+.settings-page.night-mode {
+  background: #1a1a1a;
+}
+
+.settings-page.night-mode .settings-title {
+  color: #93c5fd;
+}
+
+.settings-page.night-mode .settings-subtitle {
+  color: #9ca3af;
+}
+
+.settings-page.night-mode .settings-section {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+.settings-page.night-mode .settings-section-title {
+  background: #262626;
+  color: #9ca3af;
+  border-color: #404040;
+}
+
+.settings-page.night-mode .settings-row {
+  border-color: #404040;
+}
+
+.settings-page.night-mode .settings-row-label {
+  color: #e5e5e5;
+}
+
+.settings-page.night-mode .settings-row-desc {
+  color: #9ca3af;
+}
+
+.settings-page.night-mode .settings-preview {
+  background: #1a1a1a;
+  border-color: #404040;
+}
+
+.settings-page.night-mode .settings-preview-text {
+  color: #d1d5db;
+}
+
+.settings-page.night-mode .settings-font-controls {
+  background: #1a1a1a;
+}
+
+.settings-page.night-mode .settings-font-btn {
+  background: #374151;
+  border-color: #4b5563;
+  color: #e5e5e5;
+}
+
+/* ── Action buttons ───────────────────────────────────────── */
+.settings-action-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.export-btn {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.export-btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.danger-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.danger-btn:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.danger-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.danger-all {
+  background: #fff1f2;
+  border-color: #fda4af;
+}
+
+.settings-row-danger {
+  background: #fff8f8;
+}
+
+/* ── Confirm dialog ───────────────────────────────────────── */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-dialog {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.confirm-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-message {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.confirm-cancel {
+  padding: 0.55rem 1.4rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.confirm-cancel:hover { background: #f9fafb; }
+
+.confirm-ok {
+  padding: 0.55rem 1.4rem;
+  border-radius: 6px;
+  border: none;
+  background: #dc2626;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.confirm-ok:hover { background: #b91c1c; }
+
+/* ── Toast ────────────────────────────────────────────────── */
+.settings-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e3a5f;
+  color: white;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  animation: toast-in 0.2s ease;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Night mode additions */
+.settings-page.night-mode .confirm-dialog {
+  background: #2d2d2d;
+  color: #e5e5e5;
+}
+
+.settings-page.night-mode .confirm-message { color: #d1d5db; }
+.settings-page.night-mode .confirm-cancel {
+  background: #374151;
+  border-color: #4b5563;
+  color: #e5e5e5;
+}
+
+.settings-page.night-mode .settings-row-danger { background: #2a1f1f; }
+.settings-page.night-mode .danger-btn {
+  background: #3b1f1f;
+  color: #fca5a5;
+  border-color: #7f1d1d;
+}
